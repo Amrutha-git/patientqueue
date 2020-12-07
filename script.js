@@ -1,19 +1,21 @@
 var entry=document.getElementById("btn");
-entry.addEventListener("click",displayPatient);
+entry.addEventListener("click",displayPatient);//Adding Event Listener to the button element
+
 
 var row=1;
-
+//Function for getting the data from index.html
 function displayPatient(){
     var pname=document.getElementById("pname").value;
     var add=document.getElementById("add").value;
     var mobile=document.getElementById("mobile").value;
     var problem=document.getElementById("problem").value;
-    
-    console.log(problem);
+    //console.log(problem);
+    //Alert message if user have not filled all the fields
     if(!pname||!add||!mobile||!problem){
         alert("Please fill the fields!")
         return;
     }
+    //Display entered data using a table
     var display=document.getElementById("display");
 
     var newRow=display.insertRow(row);
@@ -30,10 +32,15 @@ function displayPatient(){
     cell3.innerHTML=add;
     cell4.innerHTML=mobile;
     cell5.innerHTML=problem;
-cell6.innerHTML=`<a href="#" target="_blank" onClick="onDelete(this)">x</a>`;
-    row++;
-    function onDelete(){
-        document.getElementById("display").deleteRow(newRow.rowIndex);
+   //anchor tag to remove a row
+  
+   cell6.innerHTML=`<input type="button" style={color:red} id="delbtn" value="x" onClick="onDelete(this)"></input>`;
+    
+    
+   
+    function onDelete(roww){
+        var d=roww.parentNode.parentNode.rowIndex;
+        document.getElementById("display").deleteRow(d);
     }
 
 

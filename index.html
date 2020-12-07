@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Queue</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></link>
     <link rel="stylesheet" type="text/css" href="style.css"></link>
 </head>
 <body>
     <!--Code-->
     <h1>Patient Queue</h1>
+    <!--Form-->
     <div class="container">
         
           <div class="row">
@@ -59,8 +59,9 @@
       <!--Table for displaying patient details-->
       <br><br><br>
      <div class="wrapper" >
-        <input type="text" id="search" name="searchbtn" placeholder="Search...">
-         <button>Search</button>
+        <!-- <input type="text" id="search" name="searchbtn"  onkeyup='searchTable()' placeholder="Search..."> -->
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        <button id="searchbtn">Go</button>
      </div>
       <table id="display">
         <tr>
@@ -73,38 +74,7 @@
        
        </table><!--end of table-->
        
-    <!-- <div class="container" id="pform">
-        <div id="pname" class="input">Patient Name:<input id="name" type="text" placeholder="Enter Name"required/></div>
-        <br>
-        <div id="padd" class="input">Address:<input id="address" type="text" placeholder="Enter Address"required /></div>
-        <br>
-        <div id="pmob" class="input">Mobile Number:<input id="name" type="number" placeholder="Enter the phone number" required/></div>
-        <br>
-        <label for="problem" class="input">Problem :</label>
-        <select id="input">
-            <option value="problem">Select Problem</option>
-            <option value="Stomach">Stomach Pain</option>
-            <option value="cough">Cough</option>
-            <option value="fever">Fever</option>
-            <option value="cold">Cold</option>
-            <option value="Dental">Dental</option>
-         </select>
-
-    
-    <input type="submit" id="entry" value="Register">
-</div>
-<div class="container">
-    <table id="plist">
-        <tr>
-            <th>Sl.No</th>
-            <th>Patient Name</th>
-            <th>Address</th>
-            <th>Mobile No.</th>
-            <th>Problems</th>
-            <th>Remove</th>
-        </tr>
-    </table>
-</div> -->
+ 
     <script src="script.js"></script>
 </body>
 </html>
